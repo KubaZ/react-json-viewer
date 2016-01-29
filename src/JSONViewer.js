@@ -29,7 +29,7 @@ class JSONViewer extends Component {
 			return "{ }";
 		} else {
 			return (
-					<table>
+					<table {...this.props.tableProps}>
 						{this.renderHeaderByKeys(Object.keys(obj))}
 						<tbody>
 						<tr>{
@@ -70,7 +70,7 @@ class JSONViewer extends Component {
 	aobToTable(aob) {
 		var keys = Object.keys(aob[0]);
 		return (
-				<table>
+				<table {...this.props.tableProps}>
 					{this.renderHeaderByKeys(keys)}
 					<tbody>
 					{
@@ -111,7 +111,8 @@ class JSONViewer extends Component {
 	}
 }
 JSONViewer.propTypes = {
-	json: React.PropTypes.any.isRequired
+	json: React.PropTypes.any.isRequired,
+	tableProps: React.PropTypes.object
 };
 
 
