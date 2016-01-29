@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Table } from "react-bootstrap";
 import ValueViewer from './ValueViewer';
 
 class JSONViewer extends Component {
@@ -29,7 +30,7 @@ class JSONViewer extends Component {
 			return "{ }";
 		} else {
 			return (
-					<table {...this.props.tableProps}>
+					<Table {...this.props.tableProps}>
 						{this.renderHeaderByKeys(Object.keys(obj))}
 						<tbody>
 						<tr>{
@@ -38,7 +39,7 @@ class JSONViewer extends Component {
 							})
 						}</tr>
 						</tbody>
-					</table>
+					</Table>
 			);
 		}
 	}
@@ -70,7 +71,7 @@ class JSONViewer extends Component {
 	aobToTable(aob) {
 		var keys = Object.keys(aob[0]);
 		return (
-				<table {...this.props.tableProps}>
+				<Table {...this.props.tableProps}>
 					{this.renderHeaderByKeys(keys)}
 					<tbody>
 					{
@@ -85,7 +86,7 @@ class JSONViewer extends Component {
 						})
 					}
 					</tbody>
-				</table>
+				</Table>
 		);
 	}
 

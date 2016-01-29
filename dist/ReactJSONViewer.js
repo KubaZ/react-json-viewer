@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
+		module.exports = factory(require("react"), require("react-bootstrap"));
 	else if(typeof define === 'function' && define.amd)
-		define(["React"], factory);
+		define(["React", "ReactBootstrap"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactJSONViewer"] = factory(require("react"));
+		exports["ReactJSONViewer"] = factory(require("react"), require("react-bootstrap"));
 	else
-		root["ReactJSONViewer"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
+		root["ReactJSONViewer"] = factory(root["React"], root["ReactBootstrap"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -64,7 +64,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ValueViewer = __webpack_require__(3);
+	var _reactBootstrap = __webpack_require__(3);
+
+	var _ValueViewer = __webpack_require__(4);
 
 	var _ValueViewer2 = _interopRequireDefault(_ValueViewer);
 
@@ -121,7 +123,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					return "{ }";
 				} else {
 					return _react2.default.createElement(
-						"table",
+						_reactBootstrap.Table,
 						this.props.tableProps,
 						this.renderHeaderByKeys(Object.keys(obj)),
 						_react2.default.createElement(
@@ -171,7 +173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				var keys = Object.keys(aob[0]);
 				return _react2.default.createElement(
-					"table",
+					_reactBootstrap.Table,
 					this.props.tableProps,
 					this.renderHeaderByKeys(keys),
 					_react2.default.createElement(
@@ -250,6 +252,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ },
 /* 2 */,
 /* 3 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
